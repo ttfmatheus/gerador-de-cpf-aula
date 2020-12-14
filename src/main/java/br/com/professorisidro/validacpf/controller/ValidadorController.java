@@ -9,8 +9,15 @@ import br.com.professorisidro.validacpf.service.Validador;
 
 @RestController
 @CrossOrigin("*")
+
+
 public class ValidadorController {
 	
+	@GetMapping("/")
+	public String index() {
+		 return "{\"Mensagem\": \"Bem vindo a home page\"}";
+	}
+
 	@GetMapping("/validacpf")
 	public String validaCPF(@RequestParam String cpf) {
 		if (Validador.isCPF(cpf)) {
